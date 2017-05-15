@@ -1,0 +1,12 @@
+{
+  "name": "rollup-plugin-surplus",
+  "description": "Compile Surplus JSX with rollup",
+  "version": "0.0.1",
+  "author": "Adam Haile",
+  "repository": "https://github.com/adamhaile/rollup-plugin-surplus",
+  "license": "MIT",
+  "dependencies": {
+    "surplus-preprocessor": "^0.4.2",
+    "rollup-pluginutils": "^1.5.0"
+  }
+}
