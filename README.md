@@ -1,25 +1,27 @@
-# rollup-plugin-buble
-
-Use Surplus JSX with rollup.
-
-## Installation
-
-```bash
-npm install --save-dev rollup-plugin-surplus
+# rollup-plugin-surplus
+A rollup plugin for compiling [Surplus JSX](https://github.com/adamhaile/surplus) views.
+## How to install
+```sh
+> npm install --save-dev rollup-plugin-surplus
 ```
+## How to use
 
-## Usage
+Specify `suplus()` in the `plugins` property of your config.
 
-```js
-import { rollup } from 'rollup';
+Simple example:
+
+```javascript
+// rollup.config.js
 import surplus from 'rollup-plugin-surplus';
+import resolve from 'rollup-plugin-node-resolve';
 
-rollup({
-  entry: 'main.js',
-  plugins: [ surplus() ]
-}).then(...)
+export default {
+    entry: 'main.js',
+    dest: 'dist/main.js',
+    format: 'iife',
+    plugins: [
+        surplus(),
+        resolve({ extensions: ['.js', '.jsx'] })
+    ]
+};
 ```
-
-## License
-
-MIT

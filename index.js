@@ -14,7 +14,7 @@ module.exports = function surplus(options) {
 		transform: function (code, id) {
 			if (!filter(id)) return null;
 			
-		    return preprocessor.preprocess(code, { jsx: true, exec: 'S' });
+		    return preprocessor.preprocess(code, { });
 		}
 	};
 }
