@@ -1,6 +1,6 @@
 "use strict";
 
-var preprocessor = require("surplus-preprocessor"),
+var compiler = require("surplus/compiler"),
 	createFilter = require('rollup-pluginutils').createFilter;
 
 module.exports = function surplus(options) {
@@ -14,7 +14,7 @@ module.exports = function surplus(options) {
 		transform: function (code, id) {
 			if (!filter(id)) return null;
 			
-		    return preprocessor.preprocess(code, { });
+		    return compiler.compile(code, { });
 		}
 	};
 }
