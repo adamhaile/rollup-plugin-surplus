@@ -13,8 +13,16 @@ module.exports = function surplus(options) {
 
 		transform: function (code, id) {
 			if (!filter(id)) return null;
-			
-		    return compiler.compile(code, { });
+
+			var map;
+			if (options.sourcemap) {
+				var map = compiler.compile(code, {sourcemap: options.sourcemap}).map;
+			}
+			var code = compiler.compile(code, {});
+			return {
+				code: code,
+				map: map
+			};
 		}
 	};
 }
